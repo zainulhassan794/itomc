@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I2MC - Learn Computing With Us...</title>
+</head>
+
+<body>
+    {% block content %}
+
+</svg>
+
+  <!-- Banner Image Start -->
+  <img src="{% static 'images/banner.png' %}" class="img-fluid newflex" alt="..." style="height:600px;">
+  <!-- Banner Image End -->
+
+
+<!-- Free Tutorial Section Start -->
+  <section id="free-tuto">
+    <br>
+    <h2 class="alert alert-light text-center" role="alert">
+      Our Free Tutorials
+    </h2>
+
+<div class="container">
+  {% for free_tutorials in object_list %}
+    <!-- Cards -->
+  {% if forloop.first %}<div class="row">{% endif %}
+
+          <div class="card" style="width: 18rem;margin: auto;margin-bottom: 30px;padding: 0;margin-top:30px;">
+        <a href="{% url 'free_view' free_tutorials.pk %}" class="btn btn-light"><img src="https://img.youtube.com/vi/{{ free_tutorials.thumb }}/maxresdefault.jpg" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+
+          <div class="alert alert-light" role="alert">{{ free_tutorials.title }}</div>
+          <hr>
+          <a href="{% url 'free_view' free_tutorials.pk %}" class="btn btn-light">Learn Now</a>
+        </div>
+      </div>
+      {% if forloop.counter|divisibleby:3 %}
+
+    </div>
+    <div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
+
+
+    </div>
+
+  </section>
+
+  <!-- Free Tutorial Section End -->
+
+
+<!-- About Section Start -->
+  <section id="about">
+    <br>
+    <h2 class="alert alert-light text-center" role="alert">
+      About Us
+    </h2>
+
+    <br>
+    <!-- Cards -->
+    <div class="container">
+
+    <div class="card mb-3">
+  <img src="{% static 'images/logo_img.png' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h3 class="card-title fw-bold">Who We Are?</h3><hr>
+    <p class="card-text"><strong>Hi Guys!...</strong> Welcome To <strong>I2MC.</strong> This is The Perfect Place For You To Learn Computing With Us. We Are Providing Lots of Courses Such as <strong>MS Office , Graphic Designing , Frontend Development , Backend Development & More...</strong><br><br><strong>Always Keep Touch With Us...</strong><br><strong>Thanks You...</strong></p>
+  </div>
+</div>
+
+</div>
+
+
+
+  </section>
+  <!-- About Section End -->
+
+  {% endblock %}
+
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>I2MC - Learn Computing With Us...</title>
+</head>
+
+<body>
+    {% block content %}
+
+
+<div class="container align-items-center">
+{% if messages %}
+{% for message in messages %}
+<br>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+</div>
+
+    <div class="container h-auto d-flex justify-content-center align-items-center">
+
+<div class="card m-5" style="padding: 35px;border-color:#e9ecef;background: #fcfcfd;">
+
+
+<form method="POST">
+  {% csrf_token %}
+  
+  <h1 class="fw-semibold">Login</h1><br>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label fw-medium">Username</label>
+    <input type="text" class="form-control" name="username">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label fw-medium">Password</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+
+  <button type="submit" class="btn btn-outline-primary">Submit</button>
+</form>
+
+</div>
+
+</div>
+
+  {% endblock %}
+
+</body>
+
+</html>
