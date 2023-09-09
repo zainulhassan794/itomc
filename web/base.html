@@ -12133,6 +12133,9 @@ textarea.form-control-lg {
   <li class="nav-item">
     <a class="nav-link {% if request.resolver_match.url_name == 'paid_courses' %}active{% endif %}" href="{% url 'paid_courses' %}" style="color: #000;">Courses</a>
   </li>
+<li class="nav-item">
+    <a class="nav-link {% if request.resolver_match.url_name == 'tools' %}active{% endif %}" href="{% url 'tools' %}" style="color: #000;">SW & Tools</a>
+  </li>
   <li class="nav-item">
     <a class="nav-link {% if request.resolver_match.url_name == 'logout' %}active{% endif %}" href="{% url 'logout' %}" style="color: #000;">Logout</a>
   </li>
