@@ -35,3 +35,6 @@ class P_Courses(ListView):
 class P_Courses_View(DetailView):
 	model = Paid_Courses
 	template_name = "paid_courses_view.html"
+
+def tools_view(request):
+	return render(request , "tools.html" , {})
