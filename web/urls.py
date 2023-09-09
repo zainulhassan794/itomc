@@ -10,4 +10,5 @@ urlpatterns = [
 	path("free-tutorial/<int:pk>" , Free_View.as_view() , name = "free_view"),
 	path("Courses/" , P_Courses.as_view() , name = "paid_courses"),
 	path("Courses/<int:pk>" , P_Courses_View.as_view() , name = "paid_courses_view"),
+	path("Tools/" , views.tools_view , name = "tools"),
 ]
